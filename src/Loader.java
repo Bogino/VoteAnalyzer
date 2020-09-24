@@ -26,7 +26,7 @@ public class Loader
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
-        XMLHandler handler = new XMLHandler();
+        XMLHandler handler = new XMLHandler(voterCounts);
         long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         parser.parse(new File(fileName), handler);
         usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usage;
